@@ -1,0 +1,4 @@
+id_produksi,kode_barang,nama_barang,tanggal_produksi,jumlah_produksi,satuan,biaya_produksi
+1,BRG001,Beras Premium 5kg,2025-05-01,1000,Sak,7500000.00
+2,BRG002,Minyak Goreng 1L,2025-05-02,500,Botol,4500000.00
+3,BRG003,Gula Pasir 1kg,2025-05-03,800,Sak,3200000.00

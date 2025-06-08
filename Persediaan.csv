@@ -1,0 +1,4 @@
+id_persediaan,kode_barang,tanggal_update,jumlah_stok,lokasi_gudang
+1,BRG001,2025-05-10,800,Gudang Utama
+2,BRG002,2025-05-10,300,Gudang Barat
+3,BRG003,2025-05-10,600,Gudang Timur

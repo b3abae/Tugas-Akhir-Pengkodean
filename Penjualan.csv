@@ -1,0 +1,4 @@
+id_penjualan,kode_barang,tanggal_penjualan,jumlah_jual,harga_jual,pelanggan
+1,BRG001,2025-05-15,200,9500000.00,Toko Sumber Rejeki
+2,BRG002,2025-05-16,100,1800000.00,UD Maju Jaya
+3,BRG003,2025-05-17,150,2400000.00,CV Berkah Abadi

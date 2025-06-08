@@ -1,0 +1,52 @@
+-- Tabel Produksi
+-- Menyimpan data tentang produksi barang
+CREATE TABLE Produksi (
+    id_produksi INT PRIMARY KEY AUTO_INCREMENT,
+    kode_barang VARCHAR(10) NOT NULL,
+    nama_barang VARCHAR(100) NOT NULL,
+    tanggal_produksi DATE NOT NULL,
+    jumlah_produksi INT NOT NULL,
+    satuan VARCHAR(20) NOT NULL,
+    biaya_produksi DECIMAL(15,2) NOT NULL
+);
+
+-- Tabel Persediaan
+-- Menyimpan data stok barang
+CREATE TABLE Persediaan (
+    id_persediaan INT PRIMARY KEY AUTO_INCREMENT,
+    kode_barang VARCHAR(10) NOT NULL,
+    tanggal_update DATE NOT NULL,
+    jumlah_stok INT NOT NULL,
+    lokasi_gudang VARCHAR(50) NOT NULL,
+    FOREIGN KEY (kode_barang) REFERENCES Produksi(kode_barang)
+);
+
+-- Tabel Penjualan
+-- Menyimpan data transaksi penjualan
+CREATE TABLE Penjualan (
+    id_penjualan INT PRIMARY KEY AUTO_INCREMENT,
+    kode_barang VARCHAR(10) NOT NULL,
+    tanggal_penjualan DATE NOT NULL,
+    jumlah_jual INT NOT NULL,
+    harga_jual DECIMAL(15,2) NOT NULL,
+    pelanggan VARCHAR(100) NOT NULL,
+    FOREIGN KEY (kode_barang) REFERENCES Produksi(kode_barang)
+);
+
+-- Insert contoh data ke Tabel Produksi
+INSERT INTO Produksi (kode_barang, nama_barang, tanggal_produksi, jumlah_produksi, satuan, biaya_produksi) VALUES
+('BRG001', 'Beras Premium 5kg', '2025-05-01', 1000, 'Sak', 7500000.00),
+('BRG002', 'Minyak Goreng 1L', '2025-05-02', 500, 'Botol', 4500000.00),
+('BRG003', 'Gula Pasir 1kg', '2025-05-03', 800, 'Sak', 3200000.00);
+
+-- Insert contoh data ke Tabel Persediaan
+INSERT INTO Persediaan (kode_barang, tanggal_update, jumlah_stok, lokasi_gudang) VALUES
+('BRG001', '2025-05-10', 800, 'Gudang Utama'),
+('BRG002', '2025-05-10', 300, 'Gudang Barat'),
+('BRG003', '2025-05-10', 600, 'Gudang Timur');
+
+-- Insert contoh data ke Tabel Penjualan
+INSERT INTO Penjualan (kode_barang, tanggal_penjualan, jumlah_jual, harga_jual, pelanggan) VALUES
+('BRG001', '2025-05-15', 200, 9500000.00, 'Toko Sumber Rejeki'),
+('BRG002', '2025-05-16', 100, 1800000.00, 'UD Maju Jaya'),
+('BRG003', '2025-05-17', 150, 2400000.00, 'CV Berkah Abadi');
